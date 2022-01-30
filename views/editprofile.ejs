@@ -1,0 +1,100 @@
+<%- include('headers'); -%>
+<%- include('navbar_login'); -%>
+<%- include('container'); -%>
+<% if (message == "profupdatesuccess") { %>
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        Profile update successful! Visit <a href="profile">your profile!</a>
+      </div>
+      <% } %>
+      <% if (message == "File Not Supported") { %>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Profile update unsuccessful! Image not uploaded Visit <a href="profile">your profile  </a> or try again!
+          </div>
+          <% } %>
+      <%if (message == "profupdatefailed") { %>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-danger" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            An account with this email already exist! Please try <a href="profile">logging in</a> or provide a different email
+          </div>
+          <% } %>
+      <%if (message == "password is good") { %>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-danger" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            access is valid <a href="profile">logging in</a> 
+          </div>
+          <% } %>
+       <% if (message == "Curr") { %>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Current Password is wrong, Re-enter current Password!
+          </div>
+          <% } %>
+        <% if (message == "Password change was succesful") { %>
+          <div class="alert alert-success" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span>
+              Change was successful!
+            </div>
+          <% } %>
+          <% if (message == "fail here") { %>
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                something went wrong!
+              </div>
+            <% } %>
+            <% if (message == "passwords dont match") { %>
+              <div class="alert alert-danger" role="alert">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                  <span class="sr-only">Error:</span>
+                  New password does not match, try again with same password!
+                </div>
+              <% } %>
+            
+              <form class="form-signin" method="post" action="/changepass">
+                <h2 class="form-signin-heading">Change Your Password </h2><br><br>
+        
+                <br><p>Current Password:</p><label for="inputPassword" class="sr-only">Password</label>
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Current Password" required>
+                <br><p>New Password:</p><label for="inputPassword" class="sr-only">Password</label>
+                <input name="newpassword" type="password" id="inputPassword" class="form-control" placeholder="New Password" required>
+                <input name="newpasswordtwo" type="password" id="inputPassword" class="form-control" placeholder="Re-enter New Password" required>
+                <button class="signbtn btn btn-lg btn-primary btn-block" type="submit">Change Password</button>
+                
+            </form>
+              <form class="form-signin" method="post" action="/edit">
+                <h2 class="form-signin-heading">Edit profile</h2><br><br>
+        
+                <p>Pet First Name:</p><label class="sr-only">Pet First Name</label>
+                <input name="firstname" type="text"  class="form-control" placeholder="First Name"autofocus><br>
+        
+                <p>Pet Last Name:</p><label class="sr-only">Pet Last Name</label>
+                <input name="lastname" type="text"  class="form-control" placeholder="Last Name" autofocus><br>
+        
+                <p>Breed:</p><label for="inputName" class="sr-only">Breed</label>
+                <input name="breed" type="text"  class="form-control" placeholder="Breed" autofocus><br>
+        
+                <p>Gender:</p><label for="inputName" class="sr-only">Gender</label>
+                <input name="gender" type="text"  class="form-control" placeholder="Gender" required autofocus><br>
+        
+                <p>Biography:</p><label for="inputName" class="sr-only">Biography</label>
+                <textarea name="bio" type="text"  class="form-control" placeholder="Biography" columns="6" required autofocus></textarea><br>
+        
+        
+                <button class="signbtn btn btn-lg btn-primary btn-block" type="submit">Done <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+            </form>
+              
+            <form class="form-signin" action="/upload" method="post" enctype="multipart/form-data">
+              <h2 class="form-signin-heading">Change profile picture</h2><br>
+              <input type="file" name="avatar" /><br>
+              <button class="signbtn btn btn-lg btn-primary btn-block" type="submit">Upload Image <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+            </form>
+<%- include('endcontainer'); -%>
+<%- include('footers'); -%>

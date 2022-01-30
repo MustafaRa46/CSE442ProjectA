@@ -1,0 +1,61 @@
+<%- include('headers'); -%>
+<%- include('navbar_login'); -%>
+<%- include('container'); -%>
+<img style="border-radius: 50%;width:200px;height:200px;position:center;" class="center-block" src="../src/styles/images/<%=data[0].profile_picture %>" alt="Paris" class="center">
+<br>
+<h3 style="font-size:25px;text-align:  center;"><strong><%=data[0].first_name%> <%=data[0].last_name%></h3></strong><br>
+<div class="row">
+    <%if (message == "Nouser") { %>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-danger" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            The account ID your searched for does not exist! Click <a href="explore">here</a> to view your matches!
+          </div>
+          <% } %>
+          
+        <div class="panel-body">
+        <div class="col-sm-6 col-md-4">
+            <h3>Biography</h3>
+        <div class="thumbnail">
+
+            <div class="caption">
+            <p><%=data[0].biography%></p><br><br><br>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <h3>Your Pet Information</h3>
+            <div class="thumbnail">
+    
+            <div class="caption">
+                
+                <p><strong>First Name: </strong><%=data[0].first_name%></p><br><p><strong>Last Name: </strong> <%=data[0].last_name%></p><br>
+                <p><strong>Breed: </strong><%=data[0].pet_breed%> | <strong>Gender: </strong> <%=data[0].pet_gender%></p><br>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <h3>Owner</h3>
+            <div class="thumbnail">
+    
+            <div class="caption">
+                
+                <p><strong>Owner Name: </strong><%=data[0].owner_first_name%>, <%=data[0].owner_last_name%></p>
+                <p><strong>Owner Contact: </strong><%=data[0].email%></p>
+
+            </div>
+            </div>
+        </div>
+        
+    
+    </div>    
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <a href="/edit" class="signbtn cetner-text btn btn-primary" role="button">Edit Profile <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span></a></div>
+          </div>
+        </div>
+      </div></div>
+
+  <%- include('endcontainer'); -%>
+  <%- include('footers'); -%>

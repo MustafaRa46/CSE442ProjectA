@@ -1,0 +1,46 @@
+<%- include('headers'); -%>
+<%- include('navbar_logout'); -%>
+<%- include('container'); -%>
+<% if (message == "signupsuccess") { %>
+    <div class="alert alert-success" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You have been succesfully signed up! Visit <a href="login">Log in!</a>
+      </div>
+      <% } %>
+      <%if (message == "signupfailedaccountexist") { %>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-danger" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            An account with this email already exist! Please try <a href="login">logging in</a> or provide a different email
+          </div>
+          <% } %>
+          <%if (message == "signupfailedasomethingwentwrong") { %>
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-danger" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                Something went wrong! Please refresh your browser and try again!
+              </div>
+              <% } %>
+  
+<form class="form-signin" method="post" action="/signup">
+    <h2 class="form-signin-heading"> Sign up</h2><br><br>
+    <p>Pet First Name:</p><label for="inputName" class="sr-only">Pet First Name</label>
+    <input name="firstname" type="text"  class="form-control" placeholder="First Name" required autofocus><br>
+    <p>Pet Last Name:</p><label for="inputName" class="sr-only">Pet Last Name</label>
+    <input name="lastname" type="text"  class="form-control" placeholder="Last Name" required autofocus><br>
+
+    <p >Owner First Name:</p><label for="inputName" class="sr-only">Owner First Name</label>
+    <input name="ofirstname" type="text"  class="form-control" placeholder="First Name" required autofocus><br>
+    <p>Owner Last Name:</p><label for="inputName" class="sr-only">Owner Last Name</label>
+    <input name="olastname" type="text"  class="form-control" placeholder="Last Name" required autofocus><br>
+
+   <p>Email:</p><label for="inputEmail" class="sr-only">Email address</label>
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <br><p>Password:</p><label for="inputPassword" class="sr-only">Password</label>
+
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <button class="signbtn btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+</form>
+<%- include('endcontainer'); -%>
+<%- include('footers'); -%>

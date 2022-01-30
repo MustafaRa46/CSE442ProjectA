@@ -1,0 +1,21 @@
+<%- include('headers'); -%>
+<%- include('navbar_logout'); -%>
+<%- include('container'); -%>
+<% if (message == "loginfail") { %>
+  <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      Invalid Email or Password!
+    </div>
+    <% } %>
+
+<form class="form-signin" method="post" action="/login">
+    <h2 class="form-signin-heading">LOGIN</h2><br><br>
+   <p class="">Email:</p><label for="inputEmail" class="sr-only">Email address</label>
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address"  required autofocus>
+    <br><p>Password:</p><label for="inputPassword" class="sr-only">Password</label>
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <button class="signbtn btn-lg btn-primary btn-block" type="submit">Log in</button>
+  </form>
+  <%- include('endcontainer'); -%>
+  <%- include('footers'); -%>

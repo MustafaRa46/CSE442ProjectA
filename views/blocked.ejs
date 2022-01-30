@@ -1,0 +1,37 @@
+<%- include('headers'); -%>
+  <%- include('navbar_login'); -%>
+    <%- include('container'); -%>
+    <% if (message == "unblocksuccess") { %>
+      <div class="alert alert-success" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        You have succesfully unblocked <%= unblockedname %>!
+      </div>
+      <% } %>
+      <div class="page-header">
+        <h1>View<br><br></b><small>Your Blocked</small></h1>
+      </div>
+      <% for(var i=0; i<data.length; i++) {%>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Name: <%= data[i].matcher_first_name %>, <%= data[i].matcher_last_name%>
+                  <br />
+      
+
+            <div class="col text-right">
+              <form id="button_block" action="/matches_unblock" method="post">
+                <input type="hidden" name="firstName" value=<%= data[i].matcher_first_name%>>
+                <input type="hidden" name="lastName" value=<%= data[i].matcher_last_name%>>
+                <input type="hidden" name="accountidsearched" value=<%= data[i].matcher_id%>>
+                <button class= "btn btn-danger" name="Block_button"  type="submit">Unblock</button>
+              </form>
+              <br/>
+          <form id="view_profile_button" action="/search" method="post">
+            <input type="hidden" name="accountidsearched" value=<%= data[i].matcher_id %>>
+            <button class="btn btn-success text-right" name="profile_button" type="submit">View Profile</button>
+          </form></div>
+        </li>
+        </ul>
+        <% } %>
+          <%- include('endcontainer'); -%>
+            <%- include('footers'); -%>

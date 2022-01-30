@@ -1,0 +1,58 @@
+<%- include('headers'); -%>
+<%- include('navbar_login'); -%>
+<%- include('container'); -%>
+
+<img style="border-radius: 50%;width:200px;height:200px;position:center;" class="center-block" src="../src/styles/images/<%=data[0].profile_picture %>" alt="Paris" class="center">
+<br>
+<h3 style="font-size:25px;text-align:  center;"><strong><%=data[0].first_name%> <%=data[0].last_name%></h3></strong><br>
+
+<!-- <div class="row">
+    <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <a href="/" class="btn btn-success text-center" role="button">Accept</a>
+            <a href="/" class="btn btn-danger text-center" role="button">Reject</a>
+        </div>
+        </div>
+      </div> -->
+
+        <div class="panel-body">
+        <div class="col-sm-6 col-md-4">
+            <h3>Biography</h3>
+        <div class="thumbnail">
+
+            <div class="caption">
+            <p><%=data[0].biography%></p><br><br><br>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <h3>Pet Information</h3>
+            <div class="thumbnail">
+    
+            <div class="caption">
+                
+                <p><strong>First Name: </strong><%=data[0].first_name%></p><br><p><strong>Last Name: </strong> <%=data[0].last_name%></p><br>
+                <p><strong>Breed: </strong><%=data[0].pet_breed%> | <strong>Gender: </strong> <%=data[0].pet_gender%></p><br>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <h3>Owner Contact</h3>
+            <div class="thumbnail">
+    
+            <div class="caption">
+                
+                <p><strong>Owner Name: </strong><%=data[0].owner_first_name%>, <%=data[0].owner_last_name%></p>
+                <p><strong>Owner Email: </strong><%=data[0].email%></p>
+            </div>
+            </div>
+        </div>
+        
+    
+    </div>    
+    
+    </div>
+  <%- include('endcontainer'); -%>
+
+  <%- include('footers'); -%>

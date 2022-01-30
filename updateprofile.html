@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Profile</title>
+  <style>
+    a.Header {
+      font-size: 60px;
+      margin: auto;
+      width: 50%;
+      top: 20%;
+      text-align: center;
+    }
+
+    .center {
+      margin: auto;
+      width: 10%;
+      clear: both;
+      text-align: center;
+      float: none;
+      padding-left: 0%;
+    }
+
+    .cente1 {
+      width: 900px;
+      height: 400px;
+    }
+
+    .left {
+      margin: auto;
+      width: 10%;
+      clear: left;
+      text-align: left;
+      float: left;
+      padding-left: 0%;
+    }
+
+    .right {
+      margin: auto;
+      width: 10%;
+      clear: right;
+      text-align: right;
+      float: right;
+      padding-right: 0%;
+    }
+
+    .fields1 {
+      width: 90%;
+      padding-right: 5%;
+      padding: 15px 5px;
+      height: 400px;
+      font-size: 20px;
+      display: flex;
+      border: 1px solid black;
+      box-sizing: border-box;
+      margin: left;
+      border-radius: 25px;
+      word-wrap: break-word;
+    }
+
+    textarea {
+      font-family: "Arial";
+      font-size: 12px;
+    }
+
+    .fields {
+      width: 45%;
+      padding: 15px 5px;
+      font-size: 20px;
+      display: flex;
+      border: 1px solid black;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 0 auto;
+      border-radius: 25px;
+    }
+
+    .greenbox {
+      background-color: #ADE798;
+      padding: 5%;
+      width: 60%;
+      height: 80%;
+      position: center;
+      margin: auto;
+      border-radius: 25px;
+    }
+
+    .circle {
+      height: 250px;
+      width: 250px;
+      background-color: #bbb;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: table;
+
+    }
+
+    .saveprofilebutton {
+      float: right;
+      color: white;
+      background-color: #468C40;
+      border-radius: 25px;
+      height: 10%;
+      width: 20%;
+      font-size: 20px;
+    }
+
+    .body {
+      background-color: #ADE798;
+    }
+
+    .square {
+      background: white;
+      width: 1250px;
+      height: 500px;
+      margin: 0 auto;
+      display: table;
+    }
+
+    .square2 {
+      background: white;
+      width: 200px;
+      height: 40px;
+      /* margin:0 auto; */
+      display: table;
+    }
+
+    .square3 {
+      background: white;
+      width: 200px;
+      height: 40px;
+      float: right;
+      display: table;
+      vertical-align: top;
+    }
+
+    .line {
+      display: inline-block
+    }
+
+    .gap {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+      width: 60%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body">
+    <div>
+      <div>
+        <h1 class="Header">Dog's Profile</h1>
+      </div>
+      <br />
+      <br />
+      <div class="lines">
+        <span class="circle"></span>
+      </div>
+      <br />
+      <br />
+      <div class="gap">
+        <div class="left">Dog's Name</div>
+        <input name="dogname" class="fields" placeholder="Enter your dog's name" type="text"></input>
+        <div class="right">Dog's Age</div>
+        <input name="dogage" class="fields" placeholder="Enter your dog's age" type="text"></input>
+      </div>
+      <br />
+      <br />
+      <div class="gap">
+        <div class="left">Dog's Breed</div>
+        <input name="dogbreed" class="fields" placeholder="Enter your dog's breed" type="text"></input>
+
+        <div class="right">Dog's Gender</div>
+        <input name="doggender" class="fields" placeholder="Enter your dog's gender" type="text"></input>
+      </div>
+      <br />
+      <br />
+      <div class="gap">
+        <div class="left">Owner's Name</div>
+        <input name="ownername" class="fields" placeholder="Enter your name" type="text"></input>
+
+        <div class="right">E-mail</div>
+        <input name="email" class="fields" placeholder="Enter your Email" type="text"></input>
+      </div>
+      <br />
+      <br />
+      <div class="line">
+        <h1 class="left">Biography</h1>
+      </div>
+      <br />
+      <textarea name="bio" class="fields1" placeholder="Add some quirky facts and info about your dog" cols="40"
+        rows="5"></textarea>
+      <br />
+
+      <a href="profile">
+        <input type="submit" value="Save Profile" class="saveprofilebutton"></input>
+      </a>
+
+      <br />
+      <br />
+    </div>
+  </div>
+
+</body>
+
+</html>
